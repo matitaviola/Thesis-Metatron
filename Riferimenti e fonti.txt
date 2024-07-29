@@ -6,3 +6,4 @@
 - Pico technology (CAN intro e immagine livelli voltaggio)
 - CSS Electronics (CAN immagine Frame in DBC file e del OBD2 connector)
 - "Cyberattacks and Countermeasures For In-Vehicle Networks" by Emad Aliwa et al. (CAN message Frame)
+- AUTOSAR (immagini e info su autosar)
