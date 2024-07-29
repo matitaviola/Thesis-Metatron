@@ -1,0 +1,8 @@
+- Tesi Luca
+- Materiale ufficiale metatron
+- MATHWORKS sito ufficiale (Matlab+simulink intro)
+- NI LabVIEW documentazione ufficiale (LabVIEW intro e immagini)
+- Vector CANape documentazione ufficiale (CANape intro e immagini)
+- Pico technology (CAN intro e immagine livelli voltaggio)
+- CSS Electronics (CAN immagine Frame in DBC file e del OBD2 connector)
+- "Cyberattacks and Countermeasures For In-Vehicle Networks" by Emad Aliwa et al. (CAN message Frame)
