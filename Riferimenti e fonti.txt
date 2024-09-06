@@ -1,9 +1,15 @@
-- Tesi Luca
-- Materiale ufficiale metatron
-- MATHWORKS sito ufficiale (Matlab+simulink intro)
-- NI LabVIEW documentazione ufficiale (LabVIEW intro e immagini)
-- Vector CANape documentazione ufficiale (CANape intro e immagini)
-- Pico technology (CAN intro e immagine livelli voltaggio)
-- CSS Electronics (CAN immagine Frame in DBC file e del OBD2 connector)
-- "Cyberattacks and Countermeasures For In-Vehicle Networks" by Emad Aliwa et al. (CAN message Frame)
-- AUTOSAR (immagini e info su autosar)
+•	“Library definition for an automotive ECU API layer (using Model Based approach)”, by L. Zannella
+•	“ECU design flow - Metatron experience”, Metatron S.p.A.
+•	https://www.metatron.it/it/prodotti/ch4-natural-gas-vehicle/ecus/hds
+•	https://mathworks.com/products/matlab.html
+•	https://mathworks.com/products/simulink.html
+•	https://www.ni.com/en.html
+•	https://www.vector.com/int/en/products/products-a-z/software/canape
+•	“Introduction to model-based software design” by M. Violante
+•	https://www.nxp.com/products/processors-and-microcontrollers/power-architecture/mpc5xxx-microcontrollers/ultra-reliable-mpc57xx-mcus/ultra-reliable-mpc5777c-mcu-for-automotive-and-industrial-engine-management:MPC5777C
+•	https://www.vector.com/int/en/products/products-a-z/software/canape/
+•	https://www.autopi.io/blog/what-is-wwh-obd/ 
+•	“ISO 27145-4: Road vehicles — Implementation of World-Wide Harmonized On-Board Diagnostics (WWH-OBD) - Communication requirements — Part 4”, ISO
+•	“J1939-21 Revised APR2015”, SAE International
+•	“GB 17691-2018 Annex F (English translation)”
+•	“Regulation 49 Revision 7 08/07/2015”, UNECE
