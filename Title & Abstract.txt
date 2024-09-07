@@ -1,0 +1,9 @@
+Title:
+Library definition for an automotive ECU API layer using Model Based approach - Memory Management & OBD
+
+Abstract:
+This thesis, conducted in collaboration with Metatron S.p.A., presents a model-based approach for expanding and redefining an API layer for automotive Electronic Control Units (ECUs), focussing on two key aspects: memory management and on-board diagnostics (OBD).
+The first part of this work addresses memory management, where a robust, multi-module strategy was developed and implemented to efficiently manage the non-volatile memory (NVRAM). The found solution ensures the secure storage and retrieval of safety-critical data, essential for the reliable operation of automotive systems.
+The second section introduces a novel OBD strategy, designed to detect, validate, store, and communicate faults in compliance with current emission regulations and heavy-duty vehicle protocols. The designed strategy integrates with the memory management system, leveraging stored error data to support diagnostic accuracy and reliability.
+By combining these two approaches, the work contributes to the development of a comprehensive ECU API layer that enhances both system safety and diagnostic capabilities.
+Throughout the project, we updated pre-existing code, elaborated new code from scratch, reduced complexity, and improved usability, with a strong focus on modularity and efficiency. These improvements will create a solid foundation for future developments, enabling easier integration of new features and ensuring scalability for evolving ECU requirements.
