@@ -1,0 +1,39 @@
+
+**Introduction to the Redesign of the On-Board Diagnostic System**
+
+Today, I want to discuss a significant project that focuses on the redesign of the On-Board Diagnostic (OBD) system, which is crucial for modern automotive applications. This project is a collaboration between Politecnico di Torino and the Metatron Research Center, a company specializing in the development of electronic and mechanical components for alternative fuel vehicles. The primary goal of this initiative is to align the OBD system with the latest standards while reducing complexity and enhancing maintainability for future users.
+
+**Current Challenges in Automotive Software Development**
+
+Over the years, the automotive industry has seen a rapid evolution in standards and regulations. As a result, many companies, including Metatron, have developed extensive codebases to comply with these changes. However, this has led to increased complexity in software development, making it challenging for engineers to maintain and update systems effectively. The sheer number of standards, coupled with varying interpretations and customer requirements, has resulted in a convoluted software architecture that is difficult to navigate.
+
+To address these challenges, we recognized the need for a standardized and flexible API layer that would simplify the development process. This API layer aims to support various applications, ensure portability, and provide an easy-to-use interface for developers. By streamlining the software architecture, we can reduce the time spent on repetitive tasks, minimize the potential for coding errors, and ultimately enhance the overall quality of the software.
+
+**Key Components of the Redesign**
+
+The redesign process involves several critical steps. First, we conducted a thorough analysis of the current ECU API layers and the Model-Based Software Layer (MBSL) libraries. This analysis helped us identify the main functions required for a generic ECU and the customization processes necessary to maximize configurability.
+
+One of the core components of the new system is the management of diagnostic error memory. This aspect is vital for the effective handling of faults within the vehicle. The diagnostic error memory stores information about identified faults, allowing for better fault validation and recovery strategies. Additionally, we implemented a Finite State Machine (FSM) to manage the status of diagnostic lines, ensuring that the system can respond appropriately to various fault conditions.
+
+Another essential feature of the redesigned OBD system is the management of freeze frame data. Freeze frames capture the state of the vehicle at the moment a fault is detected, providing valuable context for diagnostics. By correlating this data with the diagnostic error memory, we can enhance the accuracy of fault identification and resolution.
+
+**Testing Methodologies**
+
+To validate the effectiveness of the redesigned system, we employed Hardware-in-the-Loop (HIL) testing methodologies. HIL testing allows us to simulate real-world conditions by integrating hardware components with software models. This approach enables us to assess the system's resilience under stress and evaluate the flexibility of our memory management strategies.
+
+During the testing phase, we utilized a Data Acquisition System (DAQ) to bypass the traditional key-on and key-off system, allowing for continuous testing over extended periods. For instance, one of our tests ran for over four days, simulating 6,000 ignition cycles and collecting more than 30,000 samples. The results demonstrated the expected behavior of the system, confirming the correct alternation between modules and the integrity of the data stored in memory.
+
+**Implementation of APIs and Model-Based Design**
+
+A significant achievement of this project is the development of APIs that are now available as SIMULINK blocks in the company’s library. This integration facilitates model-based design, allowing engineers to create and test their systems in a user-friendly environment. To further enhance usability, we developed SIMULINK masks that simplify the setup process for various parameters required by the OBD strategy.
+
+These advancements not only improve the ease of use for developers but also ensure compliance with state-of-the-art OBD standards. By providing a modular and flexible framework, we are paving the way for future implementations across different electronic control units and applications.
+
+**Conclusion and Next Steps**
+
+In conclusion, this project has successfully simplified the system architecture and improved the flow of fault management. We have increased modularity, reduced error points, and minimized setup times, all while ensuring compliance with the latest diagnostic standards. 
+
+Looking ahead, our next steps involve integrating the new protocols with the Basic Software Layer and identifying a pilot project to fully test the system's functionalities in a real-world environment. This will allow us to gather further insights and refine our approach, ultimately leading to a more robust and efficient OBD system.
+
+Thank you for your attention, and I look forward to any questions you may have about this exciting project.
+
