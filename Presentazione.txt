@@ -1,39 +1,56 @@
+*Slide 1: Introduction*
 
-**Introduction to the Redesign of the On-Board Diagnostic System**
+Good [morning/afternoon], everyone. My name is Mattia Oliva, and I am here to present my thesis, which focuses on defining a library for an automotive ECU API layer using a Model-Based approach. I would like to thank my advisor, Prof. Massimo Violante, and my internship tutor, Ing. Emilio Bertrand, for their guidance throughout this journey.
 
-Today, I want to discuss a significant project that focuses on the redesign of the On-Board Diagnostic (OBD) system, which is crucial for modern automotive applications. This project is a collaboration between Politecnico di Torino and the Metatron Research Center, a company specializing in the development of electronic and mechanical components for alternative fuel vehicles. The primary goal of this initiative is to align the OBD system with the latest standards while reducing complexity and enhancing maintainability for future users.
+*Slide 2: Collaboration with Metatron*
 
-**Current Challenges in Automotive Software Development**
+This thesis was made possible through collaboration with Metatron S.p.A., a company within the Landi Renzo Group that specializes in developing electronic and mechanical components for alternative fuels. My work was conducted at the Metatron Research Center in Volvera, Turin, where I gained valuable insights into the automotive industry.
 
-Over the years, the automotive industry has seen a rapid evolution in standards and regulations. As a result, many companies, including Metatron, have developed extensive codebases to comply with these changes. However, this has led to increased complexity in software development, making it challenging for engineers to maintain and update systems effectively. The sheer number of standards, coupled with varying interpretations and customer requirements, has resulted in a convoluted software architecture that is difficult to navigate.
+*Slide 3: Current Situation*
 
-To address these challenges, we recognized the need for a standardized and flexible API layer that would simplify the development process. This API layer aims to support various applications, ensure portability, and provide an easy-to-use interface for developers. By streamlining the software architecture, we can reduce the time spent on repetitive tasks, minimize the potential for coding errors, and ultimately enhance the overall quality of the software.
+Over the years, Metatron has developed a complex code base in response to evolving standards and customer demands. However, this complexity has led to challenges in managing the code effectively. Our goal was to create a standardized and flexible API layer that would simplify development, enhance portability, and ensure compliance with diagnostic standards across various markets.
 
-**Key Components of the Redesign**
+*Slide 4: Thesis Goals*
 
-The redesign process involves several critical steps. First, we conducted a thorough analysis of the current ECU API layers and the Model-Based Software Layer (MBSL) libraries. This analysis helped us identify the main functions required for a generic ECU and the customization processes necessary to maximize configurability.
+To address these challenges, my thesis had several key goals. First, I analyzed the current ECU API layer and existing Model-Based Software Libraries (MBSL). I then defined and implemented Model-Based libraries, focusing on memory management functions and diagnostic protocols. Additionally, I developed a Demo Application Layer to validate these libraries.
 
-One of the core components of the new system is the management of diagnostic error memory. This aspect is vital for the effective handling of faults within the vehicle. The diagnostic error memory stores information about identified faults, allowing for better fault validation and recovery strategies. Additionally, we implemented a Finite State Machine (FSM) to manage the status of diagnostic lines, ensuring that the system can respond appropriately to various fault conditions.
+*Slide 5: Architecture*
 
-Another essential feature of the redesigned OBD system is the management of freeze frame data. Freeze frames capture the state of the vehicle at the moment a fault is detected, providing valuable context for diagnostics. By correlating this data with the diagnostic error memory, we can enhance the accuracy of fault identification and resolution.
+At the core of this project is a robust memory management strategy. We designed it to be general-purpose, ensuring flexibility as we navigated the complexities of the On-Board Diagnostic (OBD) system. By utilizing the NVRAM modules of the HDS9 board, we ensured data redundancy and reliability.
 
-**Testing Methodologies**
+*Slide 6: NVRAM Management - HIL Testing*
 
-To validate the effectiveness of the redesigned system, we employed Hardware-in-the-Loop (HIL) testing methodologies. HIL testing allows us to simulate real-world conditions by integrating hardware components with software models. This approach enables us to assess the system's resilience under stress and evaluate the flexibility of our memory management strategies.
+To validate our memory management system, we conducted Hardware-in-the-Loop (HIL) testing. Two automated tests were implemented using LabVIEW, focusing on the system's resilience under stress and the flexibility of our memorization strategy. Communication between the board and the test program was established via the CAN protocol.
 
-During the testing phase, we utilized a Data Acquisition System (DAQ) to bypass the traditional key-on and key-off system, allowing for continuous testing over extended periods. For instance, one of our tests ran for over four days, simulating 6,000 ignition cycles and collecting more than 30,000 samples. The results demonstrated the expected behavior of the system, confirming the correct alternation between modules and the integrity of the data stored in memory.
+*Slide 7: NVRAM Management - Results*
 
-**Implementation of APIs and Model-Based Design**
+The results of our tests were promising. The second test ran for over four days, simulating 6000 ignition cycles and collecting more than 30,000 samples. We observed the expected behavior, confirming the integrity of the data stored in memory. The first test also demonstrated correct data retrieval and module selection.
 
-A significant achievement of this project is the development of APIs that are now available as SIMULINK blocks in the company’s library. This integration facilitates model-based design, allowing engineers to create and test their systems in a user-friendly environment. To further enhance usability, we developed SIMULINK masks that simplify the setup process for various parameters required by the OBD strategy.
+*Slide 8: Diagnostic System Overview*
 
-These advancements not only improve the ease of use for developers but also ensure compliance with state-of-the-art OBD standards. By providing a modular and flexible framework, we are paving the way for future implementations across different electronic control units and applications.
+Moving on to the diagnostic system, we updated the diagnosis flow to adopt a modular approach. The automaton, named ADIA, plays a crucial role in validating error conditions and managing the error memory. We simplified the original code, condensing multiple types of ADIA into a standard-compliant Finite State Machine (FSM).
 
-**Conclusion and Next Steps**
+*Slide 9: Diagnostic Requirements*
 
-In conclusion, this project has successfully simplified the system architecture and improved the flow of fault management. We have increased modularity, reduced error points, and minimized setup times, all while ensuring compliance with the latest diagnostic standards. 
+For each fault defined in the system, the diagnosis flow has been meticulously updated. The ADIA automaton cycles through its states to validate error conditions, ensuring efficient management of the error memory and recovery strategies. This modular approach enhances maintainability and ease of use for future customers.
 
-Looking ahead, our next steps involve integrating the new protocols with the Basic Software Layer and identifying a pilot project to fully test the system's functionalities in a real-world environment. This will allow us to gather further insights and refine our approach, ultimately leading to a more robust and efficient OBD system.
+*Slide 10: Error Memory & Freeze Frame*
 
-Thank you for your attention, and I look forward to any questions you may have about this exciting project.
+The Error Memory and Freeze Frame are vital components for managing the Malfunction Indicator Lamp (MIL) and adhering to diagnostic protocols. We focused on minimizing the data stored in non-volatile memory while ensuring that essential information is retained for effective diagnostics.
+
+*Slide 11: Interfaces*
+
+To facilitate model-based design, we created APIs that are now available as SIMULINK blocks in the company’s library. Additionally, we developed user-friendly SIMULINK masks to simplify the setup process for the OBD strategy.
+
+*Slide 12: Work Recap*
+
+In summary, my work can be divided into two parts. First, I analyzed pre-existing code and implemented a new strategy, including HIL testing. Second, I defined the new OBD strategy and developed its components, ensuring compliance with state-of-the-art standards.
+
+*Slide 13: Conclusion & Next Steps*
+
+In conclusion, we have successfully simplified the system architecture, increased modularity, and ensured compliance with OBD standards. Moving forward, we aim to integrate protocols with the Basic Software Level and identify a pilot project to fully test the system in a real-world environment.
+
+*Slide 14: Thank You*
+
+Thank you for your attention. I am happy to answer any questions you may have.
 
